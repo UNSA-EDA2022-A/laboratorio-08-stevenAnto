@@ -1,4 +1,4 @@
-//package com.example.project;
+package com.example.project;
 
 public class Exercise1 {
 
@@ -20,7 +20,6 @@ public class Exercise1 {
     }
 
     public void insertarPersona(Persona obj){
-      tb.insertHash(obj);
         // Llamar al metodo 'insertHash' modificado
     }
 

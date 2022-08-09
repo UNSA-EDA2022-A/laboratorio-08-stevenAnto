@@ -1,4 +1,4 @@
-//package com.example.project;
+package com.example.project;
 
 public class Persona {
     public String DNI, nombre;
@@ -6,8 +6,5 @@ public class Persona {
     public Persona(String DNI, String nombre){
         this.DNI = DNI;
         this.nombre = nombre;
-    }
-    public String getDni(){
-      return DNI;
     }
 }
