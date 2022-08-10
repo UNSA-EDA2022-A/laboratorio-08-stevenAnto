@@ -11,11 +11,11 @@ public class Exercise1 {
 
         obj.insertarPersona(new Persona("12345678", "Jorge Chamby"));
         obj.insertarPersona(new Persona("12345679", "Juan Perez"));
-	obj.display();
+	//obj.display();
         System.out.println(obj.encontrarPersona("12345678"));
 
         obj.eliminarPersona("12345678");
-	obj.display();
+	//obj.display();
 
         System.out.println(obj.encontrarPersona("12345679"));
     }
@@ -34,7 +34,7 @@ public class Exercise1 {
     public String encontrarPersona(String dni){
       return tb.findHash(dni)==null ? "no se encontra":tb.findHash(dni).getName();
     }    
-    public void display(){
+    /*public void display(){
       tb.displayHashtable();
-    }
+    }*/
 }
