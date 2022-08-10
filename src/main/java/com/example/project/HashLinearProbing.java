@@ -102,24 +102,25 @@ public class HashLinearProbing {
     System.out.println("*****");
   }
 
-  /*public int findHash(int key) {
-    Integer wrappedInt = key;
+  public Persona findHash(String key) {
     int hash = hashing(key);
 
     if (isEmpty()) {
       System.out.println("Tabla hash esta vacia!");
-      return -1;
+      return null;
     }
 
     for (int i = 0; i < hsize; i++) {
       try {
-	if (buckets[hash].equals(wrappedInt)) {
-	  buckets[hash] = AVAILABLE;
-	  return hash;
+	if (buckets[hash].getDni().equals(key)) {
+	  System.out.println("se encontre en busqueda"+buckets[hash]);
+	  //no debe eliminar
+	  //buckets[hash] = AVAILABLE;
+	  return buckets[hash];
 	}
       } catch (Exception E) {
       }
-
+//si llega al limite, da la vuelta
       if (hash + 1 < hsize) {
 	hash++;
       } else {
@@ -127,8 +128,8 @@ public class HashLinearProbing {
       }
     }
     System.out.println("Clave " + key + " no encontrada!");
-    return -1;
-  }    */
+    return null;
+  }    
 
   public boolean isFull() {        
     return size == hsize;

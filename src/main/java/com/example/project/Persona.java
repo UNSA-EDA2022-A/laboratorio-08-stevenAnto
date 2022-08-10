@@ -10,4 +10,13 @@ public class Persona {
     public String getDni(){
       return DNI;
     }
+    public void setDni(String dni){
+      this.DNI = dni;
+    }
+    public String getName(){
+      return this.nombre;
+    }
+    public String toString(){
+      return nombre;
+    }
 }
