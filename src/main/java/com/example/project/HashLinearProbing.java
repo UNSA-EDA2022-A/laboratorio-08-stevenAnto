@@ -42,7 +42,7 @@ public class HashLinearProbing {
   public void insertHash(Persona obj) {
     String key = obj.getDni();
     int hash = hashing(key);
-    System.out.println(hash);
+    System.out.println("se inserto con este"+hash);
 
     if (isFull()) {
       System.out.println("Tabla hash esta llena!");
@@ -55,7 +55,7 @@ public class HashLinearProbing {
 	size++;
 	return;
       }
-
+//recorrido circular
       if (hash + 1 < hsize) {
 	hash++;
       } else {
@@ -64,8 +64,9 @@ public class HashLinearProbing {
     }
   }
 
-  /*public void deleteHash(Persona key) {
-    int hash = hashing(key.getDni());
+  public void deleteHash(String  key) {
+    int hash = hashing(key);
+    System.out.println("se eliminimo  con este"+hash);
 
     if (isEmpty()) {
       System.out.println("Tabla hash esta vacia!");
@@ -73,12 +74,14 @@ public class HashLinearProbing {
     }
 
     for (int i = 0; i < hsize; i++) {
-      if (buckets[hash] != null && buckets[hash].equals(wrappedInt)) {
-	buckets[hash] = key;
+      if (buckets[hash] != null && buckets[hash].getDni().equals(key)) {
+	System.out.println("encontro para eliminar");
+	//marcador para indicar que esta disponible y poder poner otrs Persona:
+	buckets[hash].setDni(AVAILABLE);
 	size--;
 	return;
       }
-
+//recorrido circular
       if (hash + 1 < hsize) {
 	hash++;
       } else {
@@ -86,18 +89,18 @@ public class HashLinearProbing {
       }
     }
     System.out.println("Clave " + key + " no encontrada");
-  }*/
+  }
 
-  /*public void displayHashtable() {
+  public void displayHashtable() {
     for (int i = 0; i < hsize; i++) {
-      if (buckets[i] == null || buckets[i] == AVAILABLE) {
+      if (buckets[i] == null || buckets[i].getDni().compareTo(AVAILABLE)==0) {
 	System.out.println("Celda " + i + ": Vacia");
       } else {
 	System.out.println("Celda " + i + ": " + buckets[i].toString());
       }
     }
     System.out.println("*****");
-  }*/
+  }
 
   /*public int findHash(int key) {
     Integer wrappedInt = key;

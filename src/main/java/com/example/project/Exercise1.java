@@ -11,10 +11,11 @@ public class Exercise1 {
 
         obj.insertarPersona(new Persona("12345678", "Jorge Chamby"));
         obj.insertarPersona(new Persona("12345679", "Juan Perez"));
-
+	obj.display();
         System.out.println(obj.encontrarPersona("12345678"));
 
         obj.eliminarPersona("12345678");
+	obj.display();
 
         System.out.println(obj.encontrarPersona("12345678"));
     }
@@ -25,6 +26,7 @@ public class Exercise1 {
     }
 
     public void eliminarPersona(String dni){
+      tb.deleteHash(dni);
         // Llamar al metodo 'deleteHash' modificado
     }
 
@@ -32,4 +34,7 @@ public class Exercise1 {
     public String encontrarPersona(String dni){
         return null;
     }    
+    public void display(){
+      tb.displayHashtable();
+    }
 }
