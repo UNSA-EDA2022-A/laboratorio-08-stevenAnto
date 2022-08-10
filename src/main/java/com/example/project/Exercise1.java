@@ -32,7 +32,7 @@ public class Exercise1 {
 
     // Retorna NULL quando no se encontro el dni, y el nombre de la persona si lo encontro
     public String encontrarPersona(String dni){
-      return tb.findHash(dni)==null ? "no se encontra":tb.findHash(dni).getName();
+      return tb.findHash(dni)==null ? null:tb.findHash(dni).getName();
     }    
     /*public void display(){
       tb.displayHashtable();
